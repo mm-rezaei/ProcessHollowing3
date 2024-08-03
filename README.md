@@ -32,14 +32,14 @@ Process Hollowing involves several steps:
 
 In the general approach to process hollowing, several Windows APIs are utilized, including:
 
-	- `CreateProcessW`
-	- `NtGetContextThread`
-	- `NtReadVirtualMemory`
-	- `NtResumeThread`
-	- `NtSetContextThread`
-	- `NtWriteVirtualMemory`
-	- `VirtualAllocEx`
-	- `VirtualProtectEx`
+	- CreateProcessW
+	- NtGetContextThread
+	- NtReadVirtualMemory
+	- NtResumeThread
+	- NtSetContextThread
+	- NtWriteVirtualMemory
+	- VirtualAllocEx
+	- VirtualProtectEx
 
 The simplest way for anti-malware solutions to detect process hollowing is often by tracking the sequences of these API calls. Another method of detection involves analyzing the memory of running processes to identify inconsistencies or the presence of injected code. However, I have developed three customized methods to reduce the likelihood of detection by anti-malware products. Additionally, I employed a custom range of the above Windows APIs, which may present further challenges for detection by such products.
 
